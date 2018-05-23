@@ -1,0 +1,70 @@
+CREATE DATABASE bailaohui DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+use bailaohui;
+CREATE TABLE companylist(
+            ID int not null auto_increment COLLATE utf8_bin,
+            company_name varchar(64) COLLATE utf8_bin,
+            company_info varchar(512) COLLATE utf8_bin,
+            company_about varchar(64) COLLATE utf8_bin,
+            company_turn varchar(64) COLLATE utf8_bin,
+            PRIMARY KEY(ID))ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+CREATE TABLE mechanismlist(
+            ID int not null auto_increment COLLATE utf8_bin,
+            mechanism_name varchar(64) COLLATE utf8_bin,
+            mechanism_info varchar(512) COLLATE utf8_bin,
+            mechanism_field varchar(256) COLLATE utf8_bin,
+            mechanism_turn varchar(128) COLLATE utf8_bin,
+	    mechanism_tel varchar(32) COLLATE utf8_bin,
+            PRIMARY KEY(ID))ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+CREATE TABLE likelist(
+	ID int not null auto_increment COLLATE utf8_bin,
+	companyID int COLLATE utf8_bin,
+	mechanismID int COLLATE utf8_bin,
+	PRIMARY KEY(ID)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+CREATE TABLE user(
+	ID int not null auto_increment COLLATE utf8_bin,
+	user_name varchar(30) COLLATE utf8_bin,
+	user_password varchar(30) COLLATE utf8_bin,
+	user_identity varchar(20) COLLATE utf8_bin,
+	user_email varchar(30) COLLATE utf8_bin,
+	PRIMARY KEY(ID))ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+insert into user(user_name,user_password,user_identity,user_email) values('root','x111111','1','237317754@qq.com');
+insert into user(user_name,user_password,user_identity,user_email) values('member','biubiu','2','23731775@qq.com');
+insert into user(user_name,user_password,user_identity,user_email) values('visitor','visitor','3','2373177@qq.com');
+CREATE TABLE xinwen(
+            ID int not null auto_increment COLLATE utf8_bin,
+            ntitle varchar(30) COLLATE utf8_bin,
+            fbdw varchar(20) COLLATE utf8_bin,
+            fbr varchar(30) COLLATE utf8_bin,
+            fbsj varchar(30) COLLATE utf8_bin,
+            newsnr varchar(300) COLLATE utf8_bin,
+	    imgname varchar(40) COLLATE utf8_bin,
+            PRIMARY KEY(ID)
+            )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+CREATE DATABASE news;
+
+CREATE TABLE category(
+    cid int not null auto_increment COLLATE utf8_bin,
+    cname varchar(30) COLLATE utf8_bin,
+    PRIMARY KEY(cid)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+CREATE TABLE press(
+    pid int not null auto_increment COLLATE utf8_bin,
+    ptitle varchar(100) COLLATE utf8_bin,
+    pcontent varchar(600) COLLATE utf8_bin,
+    pdepartment varchar(30) COLLATE utf8_bin,
+    pdate  varchar(30) COLLATE utf8_bin,
+    ppicture varchar(30) COLLATE utf8_bin,
+    uname varchar(30) COLLATE utf8_bin,
+    cid int COLLATE utf8_bin,
+    PRIMARY KEY(pid)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+CREATE TABLE user(
+    uname varchar(50) COLLATE utf8_bin,
+    upassword varchar(50) COLLATE utf8_bin,
+    email varchar(30) COLLATE utf8_bin,
+    PRIMARY KEY(uname)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;

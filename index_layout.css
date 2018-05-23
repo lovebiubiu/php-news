@@ -1,0 +1,58 @@
+*{
+    margin:0px;
+    padding: 0px;
+}
+body{
+}
+.welcome{
+    height: 40px;
+    color:#303030;
+    font-size: 18px;
+}
+
+.guide{
+    background-color: #483D8B;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items:  flex-end;
+    border-bottom-color: #DDDDDD;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+.guide a{
+    font-size: 28px;
+    color:white;
+}
+#exit_login{
+    margin-left: 10px;
+    font-size: 15px;
+}
+.index_layout{
+    width: 80%;
+    margin-left: 10%;
+    background-image: url(images/web_images/index_bg.png);
+    background-repeat: no-repeat;
+     overflow: hidden;
+  background-size:cover;
+}
+.index_layout table{
+    margin-top: 20px;
+    width: 100%;
+}
+.index_layout td{
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+}
+#text_success{
+    color : #3300cc;
+    font-weight: 400;
+}
+#text_check{
+    color : #ff3333;
+    font-weight: 400;
+}
